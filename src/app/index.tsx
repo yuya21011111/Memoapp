@@ -11,30 +11,30 @@ const Index = (): JSX.Element => {
             </View>
 
             <View>
-                <View>
+                <View style={styles.memoListItem}>
                     <View>
-                        <View>買い物リスト</View>
-                        <View>2025年4月26日 15:00</View>
+                        <View style={styles.memoListTitle}>買い物リスト</View>
+                        <View style={styles.memoListItemDate}>2025年4月26日 15:00</View>
                     </View>
                     <View>
                         <View>X</View>
                     </View>
                 </View>
 
-                <View>
+                <View style={styles.memoListItem}>
                     <View>
-                        <View>買い物リスト</View>
-                        <View>2025年4月26日 15:00</View>
+                        <View style={styles.memoListTitle}>買い物リスト</View>
+                        <View style={styles.memoListItemDate}>2025年4月26日 15:00</View>
                     </View>
                     <View>
                         <View>X</View>
                     </View>
                 </View>
 
-                <View>
+                <View style={styles.memoListItem}>
                     <View>
-                        <View>買い物リスト</View>
-                        <View>2025年4月26日 15:00</View>
+                        <View style={styles.memoListTitle}>買い物リスト</View>
+                        <View style={styles.memoListItemDate}>2025年4月26日 15:00</View>
                     </View>
                     <View>
                         <View>X</View>
@@ -73,6 +73,24 @@ const styles = StyleSheet.create({
         lineHeight: 32,
         fontWeight: 'bold',
         color: '#ffffff'
+    },
+    memoListItem: {
+        backgroundColor: '#ffffff',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingVertical: 16,
+        paddingHorizontal: 19,
+        alignItems: 'center'
+    },
+    memoListItemTitle: {
+        fontSize: 16,
+        lineHeight: 32
+    },
+
+    memoListItemDate: {
+        fontSize: 12,
+        lineHeight: 16,
+        color: '#848484'
     }
 })
 
