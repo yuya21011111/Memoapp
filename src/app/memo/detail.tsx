@@ -1,6 +1,8 @@
 import { View, Text, ScrollView, StyleSheet } from 'react-native'
 import Header from '../../components/Header'
 import CircleButton from '../../components/CircleButton'
+import { Feather } from '@expo/vector-icons'
+
 const Detail = (): JSX.Element => {
     return (
         <View style={styles.container}>
@@ -12,7 +14,9 @@ const Detail = (): JSX.Element => {
             <ScrollView style={styles.memoBody}>
                 <Text style={styles.memoBodyText}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quos sequi distinctio ipsam provident corporis enim, laboriosam voluptatem ullam itaque reiciendis fugit, cupiditate minima aliquam totam! Dignissimos atque temporibus dolor sunt alias provident maxime, quidem, voluptatem voluptatibus ex accusamus, officia cumque eum? Repudiandae cumque perferendis labore consequuntur alias dicta facilis iste officia, necessitatibus rerum doloremque, fuga nisi modi nobis magnam eos itaque accusamus neque magni voluptatem eius maxime commodi cum sint. Qui quam corporis id saepe, quae dolor nam sit impedit, modi eveniet fuga repudiandae quia aut eligendi voluptatum. Dolores soluta quae temporibus sint commodi ipsum explicabo. Deleniti, odio ex.</Text>
             </ScrollView>
-            <CircleButton style={{ top: 160, bottom: 'auto' }}>＋</CircleButton>
+            <CircleButton style={{ top: 160, bottom: 'auto' }}>
+                <Feather name='plus' size={40} />
+            </CircleButton>
         </View>
     )
 }
