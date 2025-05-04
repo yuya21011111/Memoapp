@@ -3,6 +3,7 @@ import Header from '../../components/Header'
 import MemoListItem from '../../components/MemoListItem'
 import CircleButton from '../../components/CircleButton'
 import { Feather } from '@expo/vector-icons'
+import Icon from '../../components/icon'
 
 const List = (): JSX.Element => {
     return (
@@ -14,7 +15,7 @@ const List = (): JSX.Element => {
                 <MemoListItem />
             </View>
             <CircleButton>
-              <Feather name='plus' size={40} />
+              <Icon />
             </CircleButton>
         </View>
     )
