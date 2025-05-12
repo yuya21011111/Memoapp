@@ -1,4 +1,5 @@
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native'
+import { Link } from 'expo-router'
 import Header from '../../components/Header'
 import Button from '../../components/Button'
 
@@ -13,9 +14,11 @@ const LogIn = (): JSX.Element => {
                 <Button label='Submit' />
                 <View style={styles.footer}>
                     <Text style={styles.footerText}>Not registered??</Text>
-                    <TouchableOpacity>
-                        <Text style={styles.footerLink}>Sign up here!</Text>
-                    </TouchableOpacity>
+                    <Link href='/auth/sign_up' asChild>
+                        <TouchableOpacity>
+                            <Text style={styles.footerLink}>Sign up here!</Text>
+                        </TouchableOpacity>
+                    </Link>
                 </View>
             </View>
         </View>
@@ -71,8 +74,8 @@ const styles = StyleSheet.create({
     footerLink: {
         fontSize: 14,
         lineHeight: 24,
-       color: '#467FD3'
+        color: '#467FD3'
     }
 
-}) 
+})
 export default LogIn
