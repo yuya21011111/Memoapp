@@ -4,16 +4,20 @@ import CircleButton from '../../components/CircleButton'
 import { Feather } from '@expo/vector-icons'
 import Icon from '../../components/icon'
 import { router, useNavigation } from 'expo-router'
+import { useEffect } from 'react'
 
 const handlePress = (): void => {
     // 新規作成処理
     router.push('/memo/create')
 }
+
 const List = (): JSX.Element => {
     const navigation = useNavigation()
-    navigation.setOptions({
-        headerRight: () =>{ return <Text>Test</Text> }
-    })
+    useEffect(() => {
+        navigation.setOptions({
+            headerRight: () => { return <Text>Test</Text> }
+        })
+    }, [])
     return (
         <View style={styles.container}>
             <View>
@@ -22,7 +26,7 @@ const List = (): JSX.Element => {
                 <MemoListItem />
             </View>
             <CircleButton onPress={handlePress}>
-              <Icon name='plus' size={40} color='#ffffff'/>
+                <Icon name='plus' size={40} color='#ffffff' />
             </CircleButton>
         </View>
     )
