@@ -5,6 +5,7 @@ import { Feather } from '@expo/vector-icons'
 import Icon from '../../components/icon'
 import { router, useNavigation } from 'expo-router'
 import { useEffect } from 'react'
+import LogOutButton from '../../components/LogOutButton'
 
 const handlePress = (): void => {
     // 新規作成処理
@@ -15,7 +16,7 @@ const List = (): JSX.Element => {
     const navigation = useNavigation()
     useEffect(() => {
         navigation.setOptions({
-            headerRight: () => { return <Text>Test</Text> }
+            headerRight: () => { return <LogOutButton /> }
         })
     }, [])
     return (
