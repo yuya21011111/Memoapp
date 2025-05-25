@@ -15,7 +15,7 @@ const LogIn = (): JSX.Element => {
             <View style={styles.inner}>
                 <Text style={styles.title}>Log In</Text>
                 <TextInput textContentType='emailAddress' placeholder='Email Address' keyboardType='email-address' autoCapitalize='none' onChangeText={(text) => { setEmail(text) }} style={styles.input} value={email} />
-                <TextInput textContentType='password' placeholder='PassWord' secureTextEntry  autoCapitalize='none' onChangeText={(text) => { setPassWord(text) }} style={styles.input} value={PassWord} />
+                <TextInput textContentType='password' placeholder='PassWord' secureTextEntry autoCapitalize='none' onChangeText={(text) => { setPassWord(text) }} style={styles.input} value={PassWord} />
                 <Button label='Submit' onPress={handlePress} />
                 <View style={styles.footer}>
                     <Text style={styles.footerText}>Not registered??</Text>
