@@ -2,10 +2,18 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-nativ
 import { Link, router } from 'expo-router'
 import { useState } from 'react'
 import Button from '../../components/Button'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '../../config'
 
 const handlePress = (email: string, password:string): void => {
-    alert(password)
     // 会員登録処理予定
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+        console.log(userCredential.user.uid)
+    })
+    .catch((error) => {
+        console.log(error)
+    })
     router.push('/memo/list')
 }
 const SignUp = (): JSX.Element => {
