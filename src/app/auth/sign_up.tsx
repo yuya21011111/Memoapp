@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, TextInput, Alert, TouchableOpacity, StyleSheet } from 'react-native'
 import { Link, router } from 'expo-router'
 import { useState } from 'react'
 import Button from '../../components/Button'
@@ -10,11 +10,12 @@ const handlePress = (email: string, password:string): void => {
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
         console.log(userCredential.user.uid)
+        router.replace('/memo/list')
     })
     .catch((error) => {
-        console.log(error)
+        const { code, message } = error 
+        Alert.alert(message)
     })
-    router.push('/memo/list')
 }
 const SignUp = (): JSX.Element => {
     const [email, setEmail] = useState('')
