@@ -2,10 +2,21 @@ import { View, TextInput, KeyboardAvoidingView, StyleSheet } from 'react-native'
 import CircleButton from '../../components/CircleButton'
 import Icon from '../../components/icon'
 import { router } from 'expo-router'
+import { collection, addDoc } from 'firebase/firestore'
+import { db } from '../../config'
 
 const handlePress = (): void => {
     // topへ戻る
-    router.back()
+    addDoc(collection(db,'memos'),{
+        bodyText: 'test'
+    })
+    .then(() => {
+        console.log('success')
+        router.back()
+    })
+    .catch((error) => {
+        console.log(error)
+    })
 }
 
 const Create = (): JSX.Element => {
